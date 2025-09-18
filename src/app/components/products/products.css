@@ -1,0 +1,21 @@
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+input, select {
+  color: purple; /* لون النص */
+  border: 2px solid #ccc; /* البوردر الافتراضي */
+  border-radius: 6px;
+  padding: 0.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير التركيز */
+input:focus, select:focus {
+  border-color: purple;
+  box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
+  outline: none;
+}
+

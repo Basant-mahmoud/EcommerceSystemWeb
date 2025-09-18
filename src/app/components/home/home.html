@@ -1,0 +1,21 @@
+<div class="home-badge shadow-lg p-5 rounded text-center">
+  <h1 class="site-name fw-bold">{{ displayText }}</h1>
+  <p class="description mt-3">
+    Welcome to <strong>Creative</strong> ✨
+    Your one-stop shop for trendy fashion, cutting-edge electronics, and stylish accessories.
+  </p>
+
+  <div class="products mt-4">
+    <h4 class="fw-bold mb-3">Our Products</h4>
+    <ul class="list-unstyled">
+      <li>👜 Fashion & Apparel</li>
+      <li>📱 Electronics & Gadgets</li>
+      <li>⌚ Watches & Accessories</li>
+      <li>🏠 Innovative Home Products</li>
+    </ul>
+  </div>
+
+  <button class="btn btn-light mt-4 px-4 py-2" [routerLink]="['/products']">
+    Shop Now
+  </button>
+</div>

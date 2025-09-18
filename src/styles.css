@@ -1,0 +1,12 @@
+.btn {
+  background-color: white;   /* خلفية */
+  color: purple;            /* النص بنفسجي */
+  font-weight: bold;
+  border: 2px solid purple; /* بوردر بنفسجي */
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: purple; /* لما تعملي hover */
+  color: white;             /* النص أبيض */
+}

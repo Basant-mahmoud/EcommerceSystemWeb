@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div>
+    <app-navbar></app-navbar>
+  </div>
+  <div class="container text-center mt-5">
+    <button class="btn btn-primary mb-3" (click)="toggleClock()">
+      Toggle Clock
+    </button>
+
+    @if(showClock){
+      <app-clock></app-clock>
+    }
+  </div>
+
+  <!-- هنا يفتح الصفحات -->
+  <router-outlet></router-outlet>
+
+  <div class="mt-5">
+    <p>CriditCardNumber {{ '1234567812345678' | creditCard }}</p>
+  </div>
+</div>

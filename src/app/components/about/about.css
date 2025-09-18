@@ -1,0 +1,66 @@
+.about-delivery-section {
+  /*background: linear-gradient(135deg, #ffe6f0, #fff5e6);*/
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ff4d6d;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #555;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.delivery-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 2rem;
+  flex: 1 1 300px;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.delivery-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #ff4d6d;
+}
+
+.delivery-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.delivery-card ul li {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.about-delivery-section h2,
+.about-delivery-section h3 {
+  color: #4B0082; /* بنفسجي غامق */
+  font-weight: 700;
+}

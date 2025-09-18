@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-4 g-3 align-items-stretch">
+    @for (product of filteredProducts; track product.id){
+      <div class="col" appProductCard>
+        <div class="card h-50">
+          <img class="card-img-top" [src]="product.img" alt="Card image cap">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Name : {{product.name}}</h5>
+
+            @switch (product.quantity){
+              @case (0){
+                <p class="card-text " style="color: red"> OUT OF STOCK</p>
+              }
+              @case (1){
+                <p class="card-text bg-light">last one item</p>
+              }
+              @case (2){
+                <p class="card-text bg-light">last 2 item</p>
+              }
+              @default {
+                <p class="card-text">Quantity : {{product.quantity}} </p>
+                <p class="card-text">IN STOCK </p>
+              }
+            }
+
+            <p class="card-text">Price : {{product.price | currency}}</p>
+            <p class="card-text">Branched on: {{mydate | date}}</p>
+
+            <div class="mt-auto row">
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn w-100"
+                  [ngClass]="{'btn-primary': product.quantity > 0, 'btn-secondary disabled': product.quantity === 0}"
+                  [disabled]="product.quantity === 0"
+                  (click)="AddToCart(product)">
+                  Add To Cart
+                </button>
+
+              </div>
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn btn w-100"
+                  (click)="ViewDetails(product.id)" [routerLink]="['/productdetails',product.id]">
+                 View Details
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!--@if(selectedProduct){-->
+<!--  <app-product-details-->
+<!--    [product]="selectedProduct"-->
+<!--    (closeDetails)="onCloseDetails()">-->
+<!--  </app-product-details>-->
+<!--}-->

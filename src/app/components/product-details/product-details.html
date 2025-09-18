@@ -1,0 +1,8 @@
+<div class="card p-3 mt-3" *ngIf="product">
+  <h3>Product Details</h3>
+  <p><strong>Name:</strong> {{ product?.name }}</p>
+  <p><strong>Quantity:</strong> {{ product?.quantity }}</p>
+  <p><strong>Price:</strong> {{ product?.price | currency }}</p>
+  <p><strong>Category:</strong> {{ product?.categoryID }}</p>
+  <button class="btn btn" (click)="close()">Back To Product</button>
+</div>

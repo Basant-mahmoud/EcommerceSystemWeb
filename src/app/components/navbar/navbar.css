@@ -1,0 +1,10 @@
+.active-link {
+  font-weight: bold;
+  color: purple;
+  border-bottom: 2px solid purple;
+}
+.nav-link i {
+  color: black;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}

@@ -1,0 +1,32 @@
+.home-badge {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #fff;
+  border-radius: 25px;
+  max-width: 700px;
+  margin: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-badge:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.site-name {
+  font-size: 3rem;
+  color: #4B0082; /* أسود غامق */
+  letter-spacing: 3px;
+  font-weight: 800; /* يخليه Bold أكتر */
+}
+
+
+.description {
+  font-size: 1.2rem;
+}
+
+.products ul {
+  font-size: 1.1rem;
+  text-align: start;
+  margin: 0 auto;
+  display: inline-block;
+}
