@@ -28,4 +28,3 @@ It includes core features like product listing, product details, shopping cart, 
 - **HTML & CSS**
 
 
-## 📂 Project Structure
