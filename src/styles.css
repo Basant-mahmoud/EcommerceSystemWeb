@@ -10,3 +10,17 @@
   background-color: purple; /* لما تعملي hover */
   color: white;             /* النص أبيض */
 }
+.small-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #3e2678; /* بنفسجي غامق */
+  border-bottom: 2px solid #6f42c1; /* خط تحت بنفسجي غامق */
+  padding-bottom: 2px;
+}
+
+.small-link:hover {
+  color: #b084f5; /* بنفسجي فاتح */
+  text-decoration: none;
+  border-bottom: 2px solid #b084f5; /* الخط كمان يفتح مع اللون */
+}
+

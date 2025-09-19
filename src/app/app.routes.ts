@@ -7,10 +7,14 @@ import {Home} from './components/home/home';
 import {About} from './components/about/about';
 import {Contact} from './components/contact/contact';
 import {Notfound} from './components/notfound/notfound';
+import {Register} from './components/Forms/register/register';
+import {Login} from './components/Forms/login/login';
 
 export const routes: Routes = [
   {path:"cart",component: Cart},
   {path:"productcards",component: ProductCards},
+  {path:'register', component:Register},
+  {path:'login', component:Login},
   {path:"productdetails/:id",component:ProductDetails},
   {path:"products", component:Products},
   {path:"home", component:Home},
