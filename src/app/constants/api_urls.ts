@@ -10,4 +10,5 @@ export const API_URL ={
   DeleteProduct: `${domain}Product/DeleteProduct`,
   EditProduct: `${domain}Product/UpdateProduct`,
   GetProductById  : `${domain}Product/GetProductById`,
+  GetCategories: `${domain}Category/GetAllCategory`,
 }
