@@ -9,6 +9,11 @@ import {
   Validators
 } from '@angular/forms';
 import {NgClass, NgIf} from '@angular/common';
+import {Authservice} from '../../../services/authservice';
+import {RegisterRequest} from '../../../Modules/RegisterRequest';
+import {AuthResponse} from '../../../Modules/AuthResponse';
+import {ToastrService} from 'ngx-toastr';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +31,8 @@ export class Register {
   registerForm: FormGroup;
   submitted = false;
   registeredData:any = null;
-  constructor(private formBuilder: FormBuilder) {
+
+  constructor(private formBuilder: FormBuilder,private authService: Authservice, private toastr: ToastrService,  private router: Router ) {
     this.registerForm = this.formBuilder.group({
       fullName: new FormControl('', [
         Validators.required,
@@ -41,6 +47,7 @@ export class Register {
       confirmPassword: new FormControl('', [Validators.required,Validators.minLength(6)]),
     }, { validators: this.passwordMatchValidator });
   }
+
   passwordMatchValidator(group: AbstractControl) {
     const password = group.get('password')?.value;
     const confirmPassword = group.get('confirmPassword')?.value;
@@ -52,12 +59,31 @@ export class Register {
   }
   onSubmit() {
     this.submitted = true;
-
     if (this.registerForm.valid) {
-      this.registeredData = this.registerForm.value;
-      console.log(this.registeredData);// حفظ البيانات
-      this.registerForm.reset();   // يمسح الفورم بس
-      this.submitted = false;                        // مسح البيانات من الفورم
+      const request: RegisterRequest = {
+        name: this.registerForm.get('fullName')?.value,
+        username: this.registerForm.get('email')?.value.split('@')[0], // هنا ممكن تعملي username زي ما تحبي
+        email: this.registerForm.get('email')?.value,
+        password: this.registerForm.get('password')?.value,
+        role: 'User'
+      };
+      this.authService.register(request).subscribe({
+        next: (res:AuthResponse) => {
+          this.toastr.success('Registration successful! Redirecting to login...', 'Success');
+          this.registeredData=res;
+          console.log(res);
+          setTimeout(() => {
+            this.router.navigate(['/login']);  // redirect
+          }, 1500);
+          this.submitted = false;
+          this.resetForm();
+        },
+        error: (err) => {
+          console.error(' Registration failed:', err);
+          this.toastr.error(err.error?.RegistrationError?.join(', ') || 'Registration failed');
+          this.submitted = false;
+        }
+      });
     }
   }
 

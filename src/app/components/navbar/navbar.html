@@ -23,53 +23,50 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact" routerLinkActive="active-link">ContactUs</a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <a
-          routerLink="/cart"
-          routerLinkActive="active-link"
-          role="button"
-          aria-expanded="false"
-          class="nav-link"
-        >
-          <i class="bi bi-cart-fill"></i>
-        </a>
-        <a
-          routerLink="/login"
-          routerLinkActive="active-link"
-          role="button"
-          class="btn btn me-2"
-        >
-          Login
-        </a>
-        <a
-          routerLink="/register"
-          routerLinkActive="active-link"
-          role="button"
-          class="btn btn"
-        >
-          Register
-        </a>
+      <form class="d-flex" role="Authenticatin">
+        @if (!auth.isLoggedIn()){
+
+          <a
+            routerLink="/login"
+            routerLinkActive="active-link"
+            role="button"
+            class="btn btn me-2"
+          >
+            Login
+          </a>
+          <a
+            routerLink="/register"
+            routerLinkActive="active-link"
+            role="button"
+            class="btn btn"
+          >
+            Register
+          </a>
+        } @else {
+          <a
+            routerLink="/cart"
+            routerLinkActive="active-link"
+            role="button"
+            aria-expanded="false"
+            class="nav-link"
+          >
+            <i class="bi bi-cart-fill"></i>
+          </a>
+          <a
+            routerLink="/home"
+            routerLinkActive="active-link"
+            role="button"
+            class="btn btn"
+            (click)="logout()"
+          >
+            Logout
+          </a>
+
+        }
+
+
+
       </form>
     </div>
   </div>

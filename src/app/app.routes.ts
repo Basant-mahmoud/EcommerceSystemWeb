@@ -9,14 +9,16 @@ import {Contact} from './components/contact/contact';
 import {Notfound} from './components/notfound/notfound';
 import {Register} from './components/Forms/register/register';
 import {Login} from './components/Forms/login/login';
+import {guestGuard} from './guards/guest-guard';
+import {authGuardGuard} from './guards/auth-guard-guard';
 
 export const routes: Routes = [
-  {path:"cart",component: Cart},
+  {path:"cart",component: Cart, canActivate:[authGuardGuard]},
   {path:"productcards",component: ProductCards},
-  {path:'register', component:Register},
-  {path:'login', component:Login},
+  {path:'register', component:Register, canActivate: [guestGuard]},
+  {path:'login', component:Login ,canActivate: [guestGuard]},
   {path:"productdetails/:id",component:ProductDetails},
-  {path:"products", component:Products},
+  {path:"products", component:Products, canActivate: [authGuardGuard]},
   {path:"home", component:Home},
   {path:"about", component:About},
   {path:"contact", component:Contact},

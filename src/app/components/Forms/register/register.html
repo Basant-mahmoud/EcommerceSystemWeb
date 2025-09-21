@@ -130,10 +130,12 @@
 </section>
 <div *ngIf="registeredData" class="card mt-4">
   <div class="card-body">
-    <h5 class="card-title">Registered Data</h5>
-    <p><strong>Full Name:</strong> {{ registeredData.fullName }}</p>
+    <h5 class="card-title">Registered Data (From API)</h5>
+    <p><strong>Username:</strong> {{ registeredData.username }}</p>
     <p><strong>Email:</strong> {{ registeredData.email }}</p>
-    <p><strong>Phone:</strong> {{ registeredData.mobile }}</p>
+    <p><strong>Roles:</strong> {{ registeredData.roles.join(', ') }}</p>
+    <p><strong>Token:</strong> {{ registeredData.token }}</p>
   </div>
 </div>
+
 
